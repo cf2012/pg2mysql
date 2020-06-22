@@ -16,6 +16,14 @@ def getenv(k:str) -> str:
 
 
 def copy(engine_src, sql: str, engine_dest, dest_table: str):
+    """
+    复制数据
+    :param engine_src:
+    :param sql: 抽取数据的语句
+    :param engine_dest:
+    :param dest_table:
+    :return:
+    """
     # clear
     with engine_dest.connect() as conn:
         conn.execute(f"truncate table {dest_table}")
